@@ -1,7 +1,6 @@
 # config.py
-# Para alterar qualquer valor, edite apenas este arquivo.
+# Centraliza todos os parametros configuraveis do trabalho.
 
-# Tabela 1 - fator de poder de cada Pokémon
 POKEMONS = {
     "Pikachu": 1.5,
     "Bulbassauro": 1.4,
@@ -10,8 +9,7 @@ POKEMONS = {
     "Weedle": 1.1,
 }
 
-# Tabela 2 - dificuldade de cada ginásio
-# A chave é o caractere que representa o ginásio no mapa
+# Identificador no mapa -> dificuldade da batalha.
 GINASIOS = {
     "2": 35,  "3": 40,  "4": 45,  "5": 50,  "6": 55,  "7": 60,
     "8": 65,  "9": 70,  "B": 75,  "C": 80,  "D": 85,  "E": 90,
@@ -19,22 +17,35 @@ GINASIOS = {
     "N": 150, "O": 155, "P": 160, "Q": 165, "S": 170, "T": 180,
 }
 
-# Regras de energia
+# Custo para ENTRAR em cada tipo de celula, em minutos.
+CUSTOS_TERRENO = {
+    ".": 1,
+    "M": 200,
+    "A": 30,
+    "F": 15,
+    "R": 5,
+    "1": 1,
+    "U": 1,
+}
+CUSTO_GINASIO_NO_MAPA = 1
+
 ENERGIA_INICIAL = 6
-ENERGIA_MINIMA_FINAL = 1 
+ENERGIA_MINIMA_FINAL = 1
 
-# Hill Climbing: para depois de tantas tentativas seguidas sem melhorar
+# Busca local
 HC_MAX_SEM_MELHORA = 2000
-
-# Simulated Annealing
 SA_TEMPERATURA_INICIAL = 50.0
 SA_TEMPERATURA_FINAL = 0.1
-SA_ALFA = 0.98                        # a cada etapa: temperatura = temperatura * alfa
-SA_ITERACOES_POR_TEMPERATURA = 200    # vizinhos testados em cada temperatura
-NUM_EXECUCOES = 30              # quantas vezes cada algoritmo é executado
-PASTA_RESULTADOS = "resultados" # onde os custos de cada execução são salvos
-
+SA_ALFA = 0.98
+SA_ITERACOES_POR_TEMPERATURA = 200
+NUM_EXECUCOES = 30
+PASTA_RESULTADOS = "resultados"
 SEMENTE = None
-
-# Verificação de otimalidade por programação dinâmica
 VERIFICAR_OTIMO = True
+
+# A*: se True, imprime progresso resumido a cada N expansoes.
+A_STAR_MOSTRAR_PROGRESSO = True
+A_STAR_INTERVALO_PROGRESSO = 10000
+
+# Visualizacao
+ARQUIVO_VISUALIZACAO = "resultado_rota.png"
