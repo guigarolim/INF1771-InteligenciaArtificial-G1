@@ -1,6 +1,0 @@
-# Arquivos gerados automaticamente pelo Python
-__pycache__/
-*.pyc
-
-# Custos das execuções (são gerados de novo sempre que o main.py roda)
-resultados/*.csv
